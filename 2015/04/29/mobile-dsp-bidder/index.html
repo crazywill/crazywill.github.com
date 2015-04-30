@@ -3,23 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>解决Ubuntu中文乱码 | Codtage</title>
+  <title>竞价服务器 | Codtage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Setp1:修改/var/lib/locales/supported.d/local内容为zh_CN.UTF-8 UTF-8
-Setp2:修改/etc/default/locale内容为:LANG=”zh_CN.UTF-8”LANGUAGE=”zh_CN:”
-Setp3:执行sudo locale-gen">
+  <meta name="description" content="竞价服务器负责参与RTB的广告竞价。根据广告主的各种定向条件筛选出合适的广告位，并进行竞价。由于竞价服务器处于与AD Exchange直接进行交互的位置，所以DSP后续功能中所需要的关于流量、关于AD Exchange的信息都由竞价服务器进行记录。竞价服务器的主要功能有以下几点：
+
+支持不同AD Exchange的协议。主要有OpenRTB和DoubleClick协议。
+对海量的广告位进行快速的筛">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解决Ubuntu中文乱码">
-<meta property="og:url" content="http://www.codtage.com/2015/04/17/linux-chinese-locale/index.html">
+<meta property="og:title" content="竞价服务器">
+<meta property="og:url" content="http://www.codtage.com/2015/04/29/mobile-dsp-bidder/index.html">
 <meta property="og:site_name" content="Codtage">
-<meta property="og:description" content="Setp1:修改/var/lib/locales/supported.d/local内容为zh_CN.UTF-8 UTF-8
-Setp2:修改/etc/default/locale内容为:LANG=”zh_CN.UTF-8”LANGUAGE=”zh_CN:”
-Setp3:执行sudo locale-gen">
+<meta property="og:description" content="竞价服务器负责参与RTB的广告竞价。根据广告主的各种定向条件筛选出合适的广告位，并进行竞价。由于竞价服务器处于与AD Exchange直接进行交互的位置，所以DSP后续功能中所需要的关于流量、关于AD Exchange的信息都由竞价服务器进行记录。竞价服务器的主要功能有以下几点：
+
+支持不同AD Exchange的协议。主要有OpenRTB和DoubleClick协议。
+对海量的广告位进行快速的筛">
+<meta property="og:image" content="/pic/DSP_Bidder.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解决Ubuntu中文乱码">
-<meta name="twitter:description" content="Setp1:修改/var/lib/locales/supported.d/local内容为zh_CN.UTF-8 UTF-8
-Setp2:修改/etc/default/locale内容为:LANG=”zh_CN.UTF-8”LANGUAGE=”zh_CN:”
-Setp3:执行sudo locale-gen">
+<meta name="twitter:title" content="竞价服务器">
+<meta name="twitter:description" content="竞价服务器负责参与RTB的广告竞价。根据广告主的各种定向条件筛选出合适的广告位，并进行竞价。由于竞价服务器处于与AD Exchange直接进行交互的位置，所以DSP后续功能中所需要的关于流量、关于AD Exchange的信息都由竞价服务器进行记录。竞价服务器的主要功能有以下几点：
+
+支持不同AD Exchange的协议。主要有OpenRTB和DoubleClick协议。
+对海量的广告位进行快速的筛">
   
     <link rel="alternative" href="/atom.xml" title="Codtage" type="application/atom+xml">
   
@@ -65,10 +69,10 @@ Setp3:执行sudo locale-gen">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-linux-chinese-locale" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-mobile-dsp-bidder" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/04/17/linux-chinese-locale/" class="article-date">
-  <time datetime="2015-04-17T07:36:25.000Z" itemprop="datePublished">2015-04-17</time>
+    <a href="/2015/04/29/mobile-dsp-bidder/" class="article-date">
+  <time datetime="2015-04-29T06:19:08.000Z" itemprop="datePublished">2015-04-29</time>
 </a>
     
   </div>
@@ -79,7 +83,7 @@ Setp3:执行sudo locale-gen">
         
   
     <h1 class="article-title" itemprop="name">
-      解决Ubuntu中文乱码
+      竞价服务器
     </h1>
   
 
@@ -87,17 +91,30 @@ Setp3:执行sudo locale-gen">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Setp1:<br>修改/var/lib/locales/supported.d/local内容为zh_CN.UTF-8 UTF-8</p>
-<p>Setp2:<br>修改/etc/default/locale内容为:<br>LANG=”zh_CN.UTF-8”<br>LANGUAGE=”zh_CN:”</p>
-<p>Setp3:<br>执行sudo locale-gen</p>
+        <p>竞价服务器负责参与RTB的广告竞价。根据广告主的各种定向条件筛选出合适的广告位，并进行竞价。由于竞价服务器处于与AD Exchange直接进行交互的位置，所以DSP后续功能中所需要的关于流量、关于AD Exchange的信息都由竞价服务器进行记录。<br>竞价服务器的主要功能有以下几点：</p>
+<ol>
+<li>支持不同AD Exchange的协议。主要有OpenRTB和DoubleClick协议。</li>
+<li>对海量的广告位进行快速的筛选，并进行竞价。</li>
+<li>记入所有的广告位信息供后续模块使用。</li>
+<li>统计基本投放情况已供运营及开发人员查看。</li>
+<li>用户重定向功能。</li>
+</ol>
+<p>竞价服务器的主要难点：</p>
+<ol>
+<li>不同的AD Exchange的协议都有自己的特殊扩展和特点，统一到同一个内部协议需要做很多转换。</li>
+<li>由于RTB要求在200ms内返回响应，同时广告位的数据量非常大，所以要求竞价服务器能尽快的处理每一个请求。</li>
+<li>海量的广告位发送过来后，全部记录下来会造成较大的IO负载。</li>
+<li>用户重定向功能中需要快速的检索几亿的用户IDFA，需要一个快速的检索工具。</li>
+</ol>
+<p>竞价服务器的处理流程：<br><img src="/pic/DSP_Bidder.png" alt="Bidder处理流程" title="DSP Modules"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.codtage.com/2015/04/17/linux-chinese-locale/" data-id="ci941sgdb000510d2ckrcxn8q" class="article-share-link">Share</a>
+      <a data-url="http://www.codtage.com/2015/04/29/mobile-dsp-bidder/" data-id="ci941sgd7000310d2il7fm6ra" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu疑难杂症/">Ubuntu疑难杂症</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DSP/">DSP</a></li></ul>
 
     </footer>
   </div>
@@ -105,19 +122,10 @@ Setp3:执行sudo locale-gen">
     
 <nav id="article-nav">
   
-    <a href="/2015/04/29/mobile-dsp-bidder/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          竞价服务器
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/04/16/mobile-dsp-introduction/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/04/17/linux-chinese-locale/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">移动端DSP系统介绍</div>
+      <div class="article-nav-title">解决Ubuntu中文乱码</div>
     </a>
   
 </nav>
