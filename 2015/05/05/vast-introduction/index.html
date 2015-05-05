@@ -3,17 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Codtage</title>
+  <title>vast-introduction | Codtage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Codtage">
-<meta property="og:url" content="http://www.codtage.com/index.html">
+  <meta name="description" content="VAST是一个用于在ad servers和video players之间传递广告数据的平台无关的视频广告服务协议。就像网页广告用HTML来提供服务一样，VAST使用XML来提供服务。
+VAST是平台无关的，所有支持VAST文档处理的播放器或者服务器都能使用VAST协议。
+VAST广告服务的处理流程大致如下：
+术语
+随着视频广告行业的发展，某些术语已经得到了广泛的采用。以下定义该文档中与视频广告投放">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vast-introduction">
+<meta property="og:url" content="http://www.codtage.com/2015/05/05/vast-introduction/index.html">
 <meta property="og:site_name" content="Codtage">
-<meta property="og:description">
+<meta property="og:description" content="VAST是一个用于在ad servers和video players之间传递广告数据的平台无关的视频广告服务协议。就像网页广告用HTML来提供服务一样，VAST使用XML来提供服务。
+VAST是平台无关的，所有支持VAST文档处理的播放器或者服务器都能使用VAST协议。
+VAST广告服务的处理流程大致如下：
+术语
+随着视频广告行业的发展，某些术语已经得到了广泛的采用。以下定义该文档中与视频广告投放">
+<meta property="og:image" content="/pic/VAST_Process.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Codtage">
-<meta name="twitter:description">
+<meta name="twitter:title" content="vast-introduction">
+<meta name="twitter:description" content="VAST是一个用于在ad servers和video players之间传递广告数据的平台无关的视频广告服务协议。就像网页广告用HTML来提供服务一样，VAST使用XML来提供服务。
+VAST是平台无关的，所有支持VAST文档处理的播放器或者服务器都能使用VAST协议。
+VAST广告服务的处理流程大致如下：
+术语
+随着视频广告行业的发展，某些术语已经得到了广泛的采用。以下定义该文档中与视频广告投放">
   
     <link rel="alternative" href="/atom.xml" title="Codtage" type="application/atom+xml">
   
@@ -59,9 +72,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-vast-introduction" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-vast-introduction" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/05/05/vast-introduction/" class="article-date">
   <time datetime="2015-05-05T07:03:07.000Z" itemprop="datePublished">2015-05-05</time>
@@ -74,8 +85,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/05/vast-introduction/">vast-introduction</a>
+    <h1 class="article-title" itemprop="name">
+      vast-introduction
     </h1>
   
 
@@ -101,193 +112,20 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-mobile-dsp-bidder" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/04/29/mobile-dsp-bidder/" class="article-date">
-  <time datetime="2015-04-29T06:19:08.000Z" itemprop="datePublished">2015-04-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/29/mobile-dsp-bidder/">竞价服务器</a>
-    </h1>
+    <a href="/2015/04/29/mobile-dsp-bidder/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">竞价服务器</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>竞价服务器负责参与RTB的广告竞价。根据广告主的各种定向条件筛选出合适的广告位，并进行竞价。由于竞价服务器处于与AD Exchange直接进行交互的位置，所以DSP后续功能中所需要的关于流量、关于AD Exchange的信息都由竞价服务器进行记录。<br>竞价服务器的主要功能有以下几点：</p>
-<ol>
-<li>支持不同AD Exchange的协议。主要有OpenRTB和DoubleClick协议。</li>
-<li>对海量的广告位进行快速的筛选，并进行竞价。</li>
-<li>记入所有的广告位信息供后续模块使用。</li>
-<li>统计基本投放情况已供运营及开发人员查看。</li>
-<li>用户重定向功能。</li>
-</ol>
-<p>竞价服务器的主要难点：</p>
-<ol>
-<li>不同的AD Exchange的协议都有自己的特殊扩展和特点，统一到同一个内部协议需要做很多转换。</li>
-<li>由于RTB要求在200ms内返回响应，同时广告位的数据量非常大，所以要求竞价服务器能尽快的处理每一个请求。</li>
-<li>海量的广告位发送过来后，全部记录下来会造成较大的IO负载。</li>
-<li>用户重定向功能中需要快速的检索几亿的用户IDFA，需要一个快速的检索工具。</li>
-</ol>
-<p>竞价服务器的处理流程：<br><img src="/pic/DSP_Bidder.png" alt="Bidder处理流程" title="DSP Modules"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.codtage.com/2015/04/29/mobile-dsp-bidder/" data-id="ci9b2nj2z0006uld2ed5ztmv0" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DSP/">DSP</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
 
-
-  
-    <article id="post-linux-chinese-locale" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/04/17/linux-chinese-locale/" class="article-date">
-  <time datetime="2015-04-17T07:36:25.000Z" itemprop="datePublished">2015-04-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/17/linux-chinese-locale/">解决Ubuntu中文乱码</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Setp1:<br>修改/var/lib/locales/supported.d/local内容为zh_CN.UTF-8 UTF-8</p>
-<p>Setp2:<br>修改/etc/default/locale内容为:<br>LANG=”zh_CN.UTF-8”<br>LANGUAGE=”zh_CN:”</p>
-<p>Setp3:<br>执行sudo locale-gen</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.codtage.com/2015/04/17/linux-chinese-locale/" data-id="ci9b2nj320008uld2h3thrzkt" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu疑难杂症/">Ubuntu疑难杂症</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-mobile-dsp-introduction" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/04/16/mobile-dsp-introduction/" class="article-date">
-  <time datetime="2015-04-16T10:38:42.000Z" itemprop="datePublished">2015-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/16/mobile-dsp-introduction/">移动端DSP系统介绍</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>DSP:广告主服务平台。主要负责根据广告主设定的目标受众、条件定向、广告出价等条件进行广告的投放及效果追踪。</strong></p>
-<p><img src="/pic/DSP.png" alt="DSP简介" title="DSP"></p>
-<p><strong>DSP系统的主要模块：实时竞价模块、投放控制模块、效果追踪模块、出价模块、CTR预测模块、流量分析模块。</strong><br><em>实时竞价模块</em>：负责参与AD Exchange的实时竞价。具体功能为：判断AD Exchange发过来的广告位是否符合广告主的需求，进而决定是否进行竞价。整个过程需要在200ms内完成（Doubleclick需要在100ms内完成）。<br><em>投放控制模块</em>：统计每个活动的实时出价情况及投放情况，然后根据运营和广告主设定的条件控制竞价模块的竞价速率。同时需要提供简易的报表给运营。<br><em>效果追踪模块</em>：负责与广告主服务器或者第三方检测进行对接。接收他们的回调通知或回调他们以通知点击、安装。<br><em>CTR预测模块 </em>：负责对每个广告位的CTR进行预测，以供出价模块进行出价。<br><em>出价模块    </em>：根据CTR预测模块提供的CTR预测，计算出合理的价格提供给竞价模块。<br><em>流量分析模块</em>：负责统计每个不同AD Exchange的流量分布。</p>
-<p><img src="/pic/DSP_Modules.png" alt="DSP模块总览" title="DSP Modules"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.codtage.com/2015/04/16/mobile-dsp-introduction/" data-id="ci9b2nj2v0003uld2wgrrb1k0" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DSP/">DSP</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/04/16/hello-world/" class="article-date">
-  <time datetime="2015-04-16T06:59:15.614Z" itemprop="datePublished">2015-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/16/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.codtage.com/2015/04/16/hello-world/" data-id="ci9b2nj37000buld21nmqvwww" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-  
 </section>
         
           <aside id="sidebar">
