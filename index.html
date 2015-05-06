@@ -75,7 +75,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/05/vast-introduction/">vast-introduction</a>
+      <a class="article-title" href="/2015/05/05/vast-introduction/">VAST协议简介</a>
     </h1>
   
 
@@ -88,12 +88,12 @@
 <p>VAST广告服务的处理流程大致如下：<br><img src="/pic/VAST_process.png" alt="VAST服务处理流程" title="VAST_Process"></p>
 <p>术语</p>
 <p>随着视频广告行业的发展，某些术语已经得到了广泛的采用。以下定义该文档中与视频广告投放相关的一些术语：</p>
-<p>广告荚（Ad Pod）：广告荚是一序列线性广告（Linear ads ）来回播放，像多个电视插播广告，属于一个商业的暂停休息。<br>伴随广告（Companion Ad）：通常是页面的显示横幅广告（banner）或富媒体（rich media）广告，这些广告出现在视频播放器之外。伴随广告在相关In-Stream广告结束后，可能继续会留在页面上。一个伴随广告，也可以是一个嵌入到视频体验所设计的皮肤。<br>点击（Clickthrough）：当用户点击广告创意时，URL打开的页面。<br>线内广告（InLine Ad）：一个包含视频广告显示需要的所有信息的VAST广告响应。VAST的线内广告收到响应后，无需调用其他所需要的广告服务器。<br>流内广告（In-Stream Ad）：视频播放器里面出现的任何广告，无论是图像叠加或线性视频广告，例如在一个30秒的广告位置播放广告。<br>线性广告（Linear Ad）：像电视广告在播放节目之前出现广告（pre-roll），在节目中间休息期播放广告（mid-roll）或者在节目播放完之后出现广告（post-roll）。 线性广告可以是视频，富媒体或静止图像广告。使用API或其他技术，线性广告可以变得有互动性，当一个用户有互动行为时，广告时间可以延长。<br>主广告（Master Ad）：视频广告系列包括流内广告（In-Stream ad）加上一个或多个伴随广告（Companion Ads），流内广告（In-Stream ad）部分被称为作为主广告。在这个主同伴关系，必须始终显示主广告（也就是说In-Stream ad必须显示）。<br>非线性广告（Nonlinear Ad）：是In-Stream广告，与视频内容播放同时显示。非线性广告通常覆盖视频播放器的底部或顶部的五分之一，可以是文本、图像或互动广告。使用API或其他技术，视频播放器可以允许用户发起的交互行为时暂停内容的播放。非线性广告只能出现在内容视频开始和结束之间的某一点（中旬辊位置），如果没有什么互动，广告一般10-20秒后消失。<br>叠加式广告（Overlay Ad）：在视频内容上显示图像或者文字，类似非线性广告，通常也被称为简单的“非线性广告”，然而非线性广告还可能包括非重叠格式形式，它在视频播放器不覆盖任何视频内容内的投放。<br>主广告服务器（Primary Ad Server）：视频播放器调请求广告内容的第一个广告服务器。主广告服务器通常是由publisher的广告服务器。<br>二级广告服务器（Secondary Ad Server）：从主广告服务器（primary ad server）收到重定向的VAST（包装广告，VAST redirect）响应后，播放器再调用的广告服务器。二级广告服务器可能包括广告代理或广告网络服务器。此外，二级广告服务器可以将视频播放器重定向到第三个广告服务器，以及第三级广告服务器可以重定向到第四级，以此类推。最终，广告服务器必须提供一个VAST响应，其中包括所有需要显示广告的创意元素。<br>VAMG（Video Ad Measurement Guidelines）：视频广告测量指南，它定义了一套在播放视频广告时应跟踪的事件。<br>VAST（Video Ad Serving Template）：视频广告投放模板，描述了视频广告响应的XML结构。 VAST使广告响应可以用于来自任何广告服务器。<br>VAST Redirect（VAST重定向）：一个VAST广告响应指向另一个VAST响应（有时称为作为下游VAST响应）。<br>VAST Tag（VAST标签）：当被调用时返回含有VAST响应的URI。<br>Video Ad（视频广告）：在视频中显示的任何广告。视频体验可能包括横幅视频（in- banner video），文本视频（in-text video），视频流（in-stream video）等格式。VAST仅适用于在视频流中，视频播放器是用来管理独立于任何其他内容的视频体验。例如，广告横幅中的视频被认为是富媒体，这部分不在VAST的指导方针里面。<br>Video Player（视频播放）：用于管理视频体验视频播放环境。视频播放器由在线视频平台（OVP）供应商所提供的，或者可以由publisher自定义建立。<br>VMAP（Video Multi Ads Playlist）：视频多广告播放列表，描述了从广告服务器传送给播放器的视频广告播放列表的XML格式。<br>VPAID（Video Player Ad Interface Definition）：视频播放器广告接口定义，它定义一个广告和视频播放器之间的通信协议。<br>Wrapper（包装）：在VAST的背景下，一个包装就是一个响应，它提供了视频播放器使用所调用一个二次VAST回应的URI。二级响应可能会是另一种包装或一个VAST线内（inLine）响应。</p>
+<p><strong>广告荚（Ad Pod）：</strong>广告荚是一序列线性广告（Linear ads ）来回播放，像多个电视插播广告，属于一个商业的暂停休息。<br><strong>伴随广告（Companion Ad）：</strong>通常是页面的显示横幅广告（banner）或富媒体（rich media）广告，这些广告出现在视频播放器之外。伴随广告在相关In-Stream广告结束后，可能继续会留在页面上。一个伴随广告，也可以是一个嵌入到视频体验所设计的皮肤。<br><strong>点击（Clickthrough）：</strong>当用户点击广告创意时，URL打开的页面。<br><strong>线内广告（InLine Ad）：</strong>一个包含视频广告显示需要的所有信息的VAST广告响应。VAST的线内广告收到响应后，无需调用其他所需要的广告服务器。<br><strong>流内广告（In-Stream Ad）：</strong>视频播放器里面出现的任何广告，无论是图像叠加或线性视频广告，例如在一个30秒的广告位置播放广告。<br><strong>线性广告（Linear Ad）：</strong>像电视广告在播放节目之前出现广告（pre-roll），在节目中间休息期播放广告（mid-roll）或者在节目播放完之后出现广告（post-roll）。 线性广告可以是视频，富媒体或静止图像广告。使用API或其他技术，线性广告可以变得有互动性，当一个用户有互动行为时，广告时间可以延长。<br><strong>主广告（Master Ad）：</strong>视频广告系列包括流内广告（In-Stream ad）加上一个或多个伴随广告（Companion Ads），流内广告（In-Stream ad）部分被称为作为主广告。在这个主同伴关系，必须始终显示主广告（也就是说In-Stream ad必须显示）。<br><strong>非线性广告（Nonlinear Ad）：</strong>是In-Stream广告，与视频内容播放同时显示。非线性广告通常覆盖视频播放器的底部或顶部的五分之一，可以是文本、图像或互动广告。使用API或其他技术，视频播放器可以允许用户发起的交互行为时暂停内容的播放。非线性广告只能出现在内容视频开始和结束之间的某一点（中旬辊位置），如果没有什么互动，广告一般10-20秒后消失。<br><strong>叠加式广告（Overlay Ad）：</strong>在视频内容上显示图像或者文字，类似非线性广告，通常也被称为简单的“非线性广告”，然而非线性广告还可能包括非重叠格式形式，它在视频播放器不覆盖任何视频内容内的投放。<br><strong>主广告服务器（Primary Ad Server）：</strong>视频播放器调请求广告内容的第一个广告服务器。主广告服务器通常是由publisher的广告服务器。<br><strong>二级广告服务器（Secondary Ad Server）：</strong>从主广告服务器（primary ad server）收到重定向的VAST（包装广告，VAST redirect）响应后，播放器再调用的广告服务器。二级广告服务器可能包括广告代理或广告网络服务器。此外，二级广告服务器可以将视频播放器重定向到第三个广告服务器，以及第三级广告服务器可以重定向到第四级，以此类推。最终，广告服务器必须提供一个VAST响应，其中包括所有需要显示广告的创意元素。<br><strong>VAMG（Video Ad Measurement Guidelines）：</strong>视频广告测量指南，它定义了一套在播放视频广告时应跟踪的事件。<br><strong>VAST（Video Ad Serving Template）：</strong>视频广告投放模板，描述了视频广告响应的XML结构。 VAST使广告响应可以用于来自任何广告服务器。<br><strong>VAST Redirect（VAST重定向）：</strong>一个VAST广告响应指向另一个VAST响应（有时称为作为下游VAST响应）。<br><strong>VAST Tag（VAST标签）：</strong>当被调用时返回含有VAST响应的URI。<br><strong>Video Ad（视频广告）：</strong>在视频中显示的任何广告。视频体验可能包括横幅视频（in- banner video），文本视频（in-text video），视频流（in-stream video）等格式。VAST仅适用于在视频流中，视频播放器是用来管理独立于任何其他内容的视频体验。例如，广告横幅中的视频被认为是富媒体，这部分不在VAST的指导方针里面。<br><strong>Video Player（视频播放）：</strong>用于管理视频体验视频播放环境。视频播放器由在线视频平台（OVP）供应商所提供的，或者可以由publisher自定义建立。<br><strong>VMAP（Video Multi Ads Playlist）：</strong>视频多广告播放列表，描述了从广告服务器传送给播放器的视频广告播放列表的XML格式。<br><strong>VPAID（Video Player Ad Interface Definition）：</strong>视频播放器广告接口定义，它定义一个广告和视频播放器之间的通信协议。<br><strong>Wrapper（包装）：</strong>在VAST的背景下，一个包装就是一个响应，它提供了视频播放器使用所调用一个二次VAST回应的URI。二级响应可能会是另一种包装或一个VAST线内（inLine）响应。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.codtage.com/2015/05/05/vast-introduction/" data-id="ci9cjqmhw0000jrd2jq4jj5lh" class="article-share-link">Share</a>
+      <a data-url="http://www.codtage.com/2015/05/05/vast-introduction/" data-id="ci9ck29iy0000mqd2an5977vz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VAST3-0/">VAST3.0</a></li></ul>
@@ -147,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.codtage.com/2015/04/29/mobile-dsp-bidder/" data-id="ci9cjqmie0006jrd2za83nv20" class="article-share-link">Share</a>
+      <a data-url="http://www.codtage.com/2015/04/29/mobile-dsp-bidder/" data-id="ci9ck29jg0006mqd2i4do8m5a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DSP/">DSP</a></li></ul>
@@ -188,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.codtage.com/2015/04/17/linux-chinese-locale/" data-id="ci9cjqmii0008jrd2t8n721ya" class="article-share-link">Share</a>
+      <a data-url="http://www.codtage.com/2015/04/17/linux-chinese-locale/" data-id="ci9ck29jj0008mqd29r7kow0l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu疑难杂症/">Ubuntu疑难杂症</a></li></ul>
@@ -230,7 +230,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.codtage.com/2015/04/16/mobile-dsp-introduction/" data-id="ci9cjqmia0003jrd29h9jsqse" class="article-share-link">Share</a>
+      <a data-url="http://www.codtage.com/2015/04/16/mobile-dsp-introduction/" data-id="ci9ck29jc0003mqd2mvrmuxla" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DSP/">DSP</a></li></ul>
@@ -277,7 +277,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.codtage.com/2015/04/16/hello-world/" data-id="ci9cjqmim000bjrd2pdtvh5zm" class="article-share-link">Share</a>
+      <a data-url="http://www.codtage.com/2015/04/16/hello-world/" data-id="ci9ck29jn000bmqd2rrzid5zm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -328,7 +328,7 @@
       <ul>
         
           <li>
-            <a href="/2015/05/05/vast-introduction/">vast-introduction</a>
+            <a href="/2015/05/05/vast-introduction/">VAST协议简介</a>
           </li>
         
           <li>
