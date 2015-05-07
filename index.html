@@ -93,7 +93,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.codtage.com/2015/04/15/vast-introduction/" data-id="ci9dk0wjs0000gqd20is5usbg" class="article-share-link">Share</a>
+      <a data-url="http://www.codtage.com/2015/04/15/vast-introduction/" data-id="ci9dkah6y0000hgd2i8r9052m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VAST3-0/">VAST3.0</a></li></ul>
@@ -134,7 +134,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.codtage.com/2015/04/06/mobile-dsp-tracking/" data-id="ci9dk0wk60003gqd21igjtpt9" class="article-share-link">Share</a>
+      <a data-url="http://www.codtage.com/2015/04/06/mobile-dsp-tracking/" data-id="ci9dkah7j0006hgd29wpzinjr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -173,7 +173,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.codtage.com/2015/04/06/mobile-dsp-pricing/" data-id="ci9dk0wk90004gqd2toj6x3iu" class="article-share-link">Share</a>
+      <a data-url="http://www.codtage.com/2015/04/06/mobile-dsp-pricing/" data-id="ci9dkah7m0007hgd2dkr59xom" class="article-share-link">Share</a>
       
       
     </footer>
@@ -216,7 +216,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.codtage.com/2015/04/06/mobile-dsp-ctr/" data-id="ci9dk0wkk0008gqd2c03mdkxq" class="article-share-link">Share</a>
+      <a data-url="http://www.codtage.com/2015/04/06/mobile-dsp-ctr/" data-id="ci9dkah7s000bhgd2grtsscfx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -266,7 +266,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.codtage.com/2015/04/06/mobile-dsp-bk/" data-id="ci9dk0wkm0009gqd2qf4ff0oy" class="article-share-link">Share</a>
+      <a data-url="http://www.codtage.com/2015/04/06/mobile-dsp-bk/" data-id="ci9dkah7x000chgd2pwhlvnsr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -305,7 +305,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.codtage.com/2015/03/17/linux-chinese-locale/" data-id="ci9dk0wkx000cgqd2yuugnfgb" class="article-share-link">Share</a>
+      <a data-url="http://www.codtage.com/2015/03/17/linux-chinese-locale/" data-id="ci9dkah83000fhgd2lhuv74qc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu疑难杂症/">Ubuntu疑难杂症</a></li></ul>
@@ -359,10 +359,69 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.codtage.com/2015/02/19/mobile-dsp-bidder/" data-id="ci9dk0wkr000agqd2izqlg8iw" class="article-share-link">Share</a>
+      <a data-url="http://www.codtage.com/2015/02/19/mobile-dsp-bidder/" data-id="ci9dkah80000dhgd2rr89nn9h" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DSP/">DSP</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-null-struct" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/02/07/null-struct/" class="article-date">
+  <time datetime="2015-02-07T02:31:40.000Z" itemprop="datePublished">2015-02-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/02/07/null-struct/">空结构体大小[转]</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>转自：<a href="http://www.spongeliu.com/260.html" target="_blank" rel="external">http://www.spongeliu.com/260.html</a></p>
+<p>对于结构体和空类大小是1这个问题，首先这是一个C++问题，在C语言下空结构体大小为0(当然这是编译器相关的)。这里的空类和空结构体是指类或结构体中没有任何成员。<br>在C++下，空类和空结构体的大小是1（编译器相关），这是为什么呢？为什么不是0？<br>这是因为，C++标准中规定，“no object shall have the same address in memory as any other variable” ，就是任何不同的对象不能拥有相同的内存地址。 如果空类大小为0，若我们声明一个这个类的对象数组，那么数组中的每个对象都拥有了相同的地址，这显然是违背标准的。<br>但是，也许你还有一个疑问，为什么C++标准中会有这么无聊的规定呢？<br>当然，这样规定显然是有原因的。我们假设C++中有一个类型T，我们声明一个类型T的数组，然后再声明一个T类型的指针指向数组中间某个元素，则我们将指针减去1，应该得到数组的另一个索引。如下代码：</p>
+<pre><code>
+
+T array[5];
+
+int diff = &array[3] - &array[2];
+
+// diff = 1
+
+</code></pre>
+
+<p>上面的代码是一种指针运算，将两个指针相减，编译器作出如下面式子所示的动作：<br>diff = ((char <em>)&amp;array[3] - (char </em>)&amp;array[2]) / sizeof T;<br>式子应该不难懂把，很明显的一点就是这个式子的计算依赖于sizeof T。虽然上面只是一个例子，但是基本上所有的指针运算都依赖于sizeof T。<br>好，下面我们来看，如果允许不同的对象有相同的地址将会引发什么样的问题，看下面的例子：</p>
+<pre><code>
+ &array[3] - &array[2] = &array[3] - &array[1]
+                       = &array[3] - &array[1]
+                       = &array[3] - &array[0]
+                       = 0
+</code></pre>
+
+<p>我们可以看到，在这个例子中，如果每个对象都拥有相同地址，我们将没有办法通过指针运算来区分不同的对象。还有一个更严重的问题，就是如果 sizeof T是0，就会导致编译器产生一个除0的操作，引发不可控的错误。<br>基于这个原因，如果允许结构体或者类的大小为0，编译器就需要实现一些复杂的代码来处理这些异常的指针运算。<br>所以，C++标准规定不同的对象不能拥有相同的地址。那么怎样才能保证这个条件被满足呢？最简单的方法莫过于不允许任何类型的大小为0。所以编译器为每个空类或者空结构体都增加了一个虚设的字节（有的编译器可能加的更多），这样这些空类和空结构的大小就不会是0，就可以保证他们的对象拥有彼此独立的地址。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.codtage.com/2015/02/07/null-struct/" data-id="ci9dkah7e0003hgd2vxcnb5o8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li></ul>
 
     </footer>
   </div>
@@ -401,7 +460,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.codtage.com/2014/12/16/mobile-dsp-introduction/" data-id="ci9dk0wkd0005gqd2xac958cs" class="article-share-link">Share</a>
+      <a data-url="http://www.codtage.com/2014/12/16/mobile-dsp-introduction/" data-id="ci9dkah7p0008hgd26x26l1l5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DSP/">DSP</a></li></ul>
@@ -424,7 +483,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DSP/">DSP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu疑难杂症/">Ubuntu疑难杂症</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VAST3-0/">VAST3.0</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DSP/">DSP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu疑难杂症/">Ubuntu疑难杂症</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VAST3-0/">VAST3.0</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -433,7 +492,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/DSP/" style="font-size: 20px;">DSP</a><a href="/tags/Ubuntu疑难杂症/" style="font-size: 10px;">Ubuntu疑难杂症</a><a href="/tags/VAST3-0/" style="font-size: 10px;">VAST3.0</a>
+      <a href="/tags/C/" style="font-size: 10px;">C++</a><a href="/tags/DSP/" style="font-size: 20px;">DSP</a><a href="/tags/Ubuntu疑难杂症/" style="font-size: 10px;">Ubuntu疑难杂症</a><a href="/tags/VAST3-0/" style="font-size: 10px;">VAST3.0</a>
     </div>
   </div>
 
@@ -442,7 +501,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
