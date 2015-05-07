@@ -31,6 +31,7 @@
 
 预算到达上限后需要及时通知竞价服务器停止参与广告的竞价。解决方法：通过将预算控制服务器和竞价服务器放置在同一机房，保证网络传输的稳定。
 广告的投放量很大，需要有一个比较好的方法能记录针对每个用户的投放数量。用户数量在亿级别。解决方法：通过使用Bloom Filter来存储每个用户的投放">
+<meta property="og:image" content="/pic/DSP_BK.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="预算控制服务器介绍">
 <meta name="twitter:description" content="功能介绍
@@ -124,12 +125,12 @@
 <li>广告的投放量很大，需要有一个比较好的方法能记录针对每个用户的投放数量。用户数量在亿级别。<br>解决方法：通过使用Bloom Filter来存储每个用户的投放数量，同时每天清空Bloom Filter.</li>
 <li>由于国内到国外网络的环境不稳定，需要有一种可靠的方案能保证数据同步。<br>解决方法：通过使用RSync来同步日志文件，保证数据同步。</li>
 </ol>
-<p><strong>流程图</strong></p>
+<p><strong>流程图</strong><br><img src="/pic/DSP_BK.png" alt="预算控制服务器" title="DSP_BK"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.codtage.com/2015/04/06/mobile-dsp-bk/" data-id="ci9dlchr7000lobd2l0sheki6" class="article-share-link">Share</a>
+      <a data-url="http://www.codtage.com/2015/04/06/mobile-dsp-bk/" data-id="ci9dmr870000lpvd2tutcidpg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DSP/">DSP</a></li></ul>
