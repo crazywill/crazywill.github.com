@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2014/12 | Codtage</title>
+  <title>Longest Substring Without Repeating Characters | Codtage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Codtage">
-<meta property="og:url" content="http://www.codtage.com/archives/2014/12/index.html">
+  <meta name="description" content="Problem:Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for “abcabcbb” is “abc”, which the length is">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Longest Substring Without Repeating Characters">
+<meta property="og:url" content="http://www.codtage.com/2015/05/07/longest-substring-without-repeating-characters/index.html">
 <meta property="og:site_name" content="Codtage">
-<meta property="og:description">
+<meta property="og:description" content="Problem:Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for “abcabcbb” is “abc”, which the length is">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Codtage">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Longest Substring Without Repeating Characters">
+<meta name="twitter:description" content="Problem:Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for “abcabcbb” is “abc”, which the length is">
   
     <link rel="alternative" href="/atom.xml" title="Codtage" type="application/atom+xml">
   
@@ -59,39 +59,94 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2014" class="archive-year">2014</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2014/12/16/mobile-dsp-introduction/" class="archive-article-date">
-  <time datetime="2014-12-16T12:38:42.000Z" itemprop="datePublished">Dec 16</time>
+        <section id="main"><article id="post-longest-substring-without-repeating-characters" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/07/longest-substring-without-repeating-characters/" class="article-date">
+  <time datetime="2015-05-07T02:42:42.000Z" itemprop="datePublished">2015-05-07</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2014/12/16/mobile-dsp-introduction/">移动端DSP系统介绍</a>
+    <h1 class="article-title" itemprop="name">
+      Longest Substring Without Repeating Characters
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Problem:</strong><br>Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for “abcabcbb” is “abc”, which the length is 3. For “bbbbb” the longest substring is “b”, with the length of 1.</p>
+<p><strong>Code:</strong></p>
+<pre><code>
+
+class Solution:
+    # @param {string} s
+    # @return {integer}
+    def lengthOfLongestSubstring(self, s): 
+        length = 0 
+        flength = 0 
+        index = 0 
+        start = 0
+        bstart = 0
+        dic = {}
+        while index < len(s):
+            if not dic.has_key(s[index]):
+                dic[s[index]] = index
+                length +=1
+            else:
+                bstart = start
+                start = dic[s[index]]+1
+                flength = max(flength, length)
+                length = index-start+1
+                for i in range(bstart,start):
+                    del dic[s[i]]
+                dic[s[index]] = index
+            index += 1
+            flength = max(flength, length)
+        return flength
+
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.codtage.com/2015/05/07/longest-substring-without-repeating-characters/" data-id="ci9dl18w4000mmgd27b0mm8z9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/05/07/two-num/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          two-num
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/04/15/vast-introduction/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">VAST协议简介</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
 </section>
         
           <aside id="sidebar">

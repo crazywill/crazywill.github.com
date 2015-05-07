@@ -3,17 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2014/12 | Codtage</title>
+  <title>two-num | Codtage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Codtage">
-<meta property="og:url" content="http://www.codtage.com/archives/2014/12/index.html">
+  <meta name="description" content="Problem:
+Given an array of integers, find two numbers such that they add up to a specific target number.
+The function twoSum should return indices of the two numbers such that they add up to the targe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="two-num">
+<meta property="og:url" content="http://www.codtage.com/2015/05/07/two-num/index.html">
 <meta property="og:site_name" content="Codtage">
-<meta property="og:description">
+<meta property="og:description" content="Problem:
+Given an array of integers, find two numbers such that they add up to a specific target number.
+The function twoSum should return indices of the two numbers such that they add up to the targe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Codtage">
-<meta name="twitter:description">
+<meta name="twitter:title" content="two-num">
+<meta name="twitter:description" content="Problem:
+Given an array of integers, find two numbers such that they add up to a specific target number.
+The function twoSum should return indices of the two numbers such that they add up to the targe">
   
     <link rel="alternative" href="/atom.xml" title="Codtage" type="application/atom+xml">
   
@@ -59,39 +65,85 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2014" class="archive-year">2014</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2014/12/16/mobile-dsp-introduction/" class="archive-article-date">
-  <time datetime="2014-12-16T12:38:42.000Z" itemprop="datePublished">Dec 16</time>
+        <section id="main"><article id="post-two-num" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/07/two-num/" class="article-date">
+  <time datetime="2015-05-07T02:42:49.000Z" itemprop="datePublished">2015-05-07</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2014/12/16/mobile-dsp-introduction/">移动端DSP系统介绍</a>
+    <h1 class="article-title" itemprop="name">
+      two-num
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Problem:</strong></p>
+<p>Given an array of integers, find two numbers such that they add up to a specific target number.</p>
+<p>The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2. Please note that your returned answers (both index1 and index2) are not zero-based.</p>
+<p>You may assume that each input would have exactly one solution.</p>
+<p>Input: numbers={2, 7, 11, 15}, target=9<br>Output: index1=1, index2=2</p>
+<p><strong>Code</strong></p>
+<pre><code>
+class Solution:
+        # @param {integer[]} nums
+        # @param {integer} target
+        # @return {integer[]}
+        def twoSum(self, nums, target):
+            m_dict = {}
+            result = []
+            index = 1
+            for num in nums:
+                m_dict[num] = []
+                m_dict[num].append(index)
+                index += 1
+            index = 1
+            for num in nums:
+                tmp = target - num
+                if m_dict.has_key(tmp):
+                    for i in m_dict[tmp]:
+                        if i > index:
+                            result.append(index)                                                                                                                                                        
+                            result.append(i)
+                index += 1
+            return result
+</code></pre>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.codtage.com/2015/05/07/two-num/" data-id="ci9dl18uv0003mgd2y7gl0a44" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/05/07/longest-substring-without-repeating-characters/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Longest Substring Without Repeating Characters</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
 </section>
         
           <aside id="sidebar">
