@@ -5,18 +5,18 @@
   
   <title>网上找到的好用的Vim配置 | Codtage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="map  :call SaveInputData()func! SaveInputData()    exec “tabnew”    exec ‘normal “+gP’    exec “w! /tmp/input_data”endfunc
-“colorscheme torte“colorscheme murphy“colorscheme desert“colorscheme desert“c">
+  <meta name="description" content="map  :call SaveInputData()                                                                                                                                                                           
+fu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网上找到的好用的Vim配置">
 <meta property="og:url" content="http://www.codtage.com/2015/01/03/vim-config/index.html">
 <meta property="og:site_name" content="Codtage">
-<meta property="og:description" content="map  :call SaveInputData()func! SaveInputData()    exec “tabnew”    exec ‘normal “+gP’    exec “w! /tmp/input_data”endfunc
-“colorscheme torte“colorscheme murphy“colorscheme desert“colorscheme desert“c">
+<meta property="og:description" content="map  :call SaveInputData()                                                                                                                                                                           
+fu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网上找到的好用的Vim配置">
-<meta name="twitter:description" content="map  :call SaveInputData()func! SaveInputData()    exec “tabnew”    exec ‘normal “+gP’    exec “w! /tmp/input_data”endfunc
-“colorscheme torte“colorscheme murphy“colorscheme desert“colorscheme desert“c">
+<meta name="twitter:description" content="map  :call SaveInputData()                                                                                                                                                                           
+fu">
   
     <link rel="alternative" href="/atom.xml" title="Codtage" type="application/atom+xml">
   
@@ -84,48 +84,241 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>map <f9> :call SaveInputData()<cr><br>func! SaveInputData()<br>    exec “tabnew”<br>    exec ‘normal “+gP’<br>    exec “w! /tmp/input_data”<br>endfunc</cr></f9></p>
-<p>“colorscheme torte<br>“colorscheme murphy<br>“colorscheme desert<br>“colorscheme desert<br>“colorscheme elflord<br>colorscheme ron </p>
-<p>“set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936<br>“set termencoding=utf-8<br>“set encoding=utf-8<br>“set fileencodings=ucs-bom,utf-8,cp936<br>“set fileencoding=utf-8</p>
-<p>“”””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””<br>“ 显示相关<br>“”””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””<br>“set shortmess=atI   “ 启动的时候不显示那个援助乌干达儿童的提示<br>“winpos 5 5          “ 设定窗口位置<br>“set lines=40 columns=155    “ 设定窗口大小<br>set go=             “ 不要图形按钮<br>“color asmanian2     “ 设置背景主题<br>“set guifont=Courier_New:h10:cANSI   “ 设置字体<br>“syntax on           “ 语法高亮<br>autocmd InsertLeave <em> se nocul  “ 用浅色高亮当前行<br>autocmd InsertEnter </em> se cul    “ 用浅色高亮当前行<br>“set ruler           “ 显示标尺<br>set showcmd         “ 输入的命令显示出来，看的清楚些<br>“set cmdheight=1     “ 命令行（在状态行下）的高度，设置为1<br>“set whichwrap+=&lt;,&gt;,h,l   “ 允许backspace和光标键跨越行边界(不建议)<br>“set scrolloff=3     “ 光标移动到buffer的顶部和底部时保持3行距离<br>set novisualbell    “ 不要闪烁(不明白)<br>set statusline=%F%m%r%h%w\ [FORMAT=%{&amp;ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\”%d/%m/%y\ -\ %H:%M\”)}   “状态行显示的内容<br>set laststatus=1    “ 启动显示状态行(1),总是显示状态行(2)<br>“set foldenable      “ 允许折叠<br>set foldmethod=manual   “ 手动折叠<br>“set background=dark “背景使用黑色<br>set nocompatible  “去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限<br>“ 显示中文帮助<br>if version &gt;= 603<br>    set helplang=cn<br>    set encoding=utf-8<br>endif<br>“ 设置配色方案<br>“colorscheme murphy<br>“字体<br>“if (has(“gui_running”))<br>“   set guifont=Bitstream\ Vera\ Sans\ Mono\ 10<br>“endif<br>“””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””<br>“””””新文件标题<br>“”””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””<br>“新建.c,.h,.sh,.java文件，自动插入文件头<br>“”filetype on<br>autocmd BufNewFile <em>.py,</em>.cpp,<em>.[ch],</em>.sh,*.java exec “:call SetTitle()”<br>“”定义函数SetTitle，自动插入文件头<br>func SetTitle()<br>    “如果文件类型为.sh文件<br>    if &amp;filetype == ‘sh’<br>        call setline(1,”#########################################################################”)<br>        call append(line(“.”), “# File Name: “.expand(“%”))<br>        call append(line(“.”)+1, “# Author: will”)<br>        call append(line(“.”)+2, “# mail: 457383152@qq.com”)<br>        call append(line(“.”)+3, “# Created Time: “.strftime(“%c”))<br>        call append(line(“.”)+4, “#########################################################################”)<br>        call append(line(“.”)+5, “#!/bin/bash”)<br>        call append(line(“.”)+6, “”)<br>    elseif &amp;filetype == ‘python’<br>        call setline(1,”#!/usr/bin/env python”)<br>        call append(line(“.”),”#encoding:utf-8”)<br>        call append(line(“.”)+1,”#########################################################################”)<br>        call append(line(“.”)+2, “# File Name: “.expand(“%”))<br>        call append(line(“.”)+3, “# Author: will”)<br>        call append(line(“.”)+4, “# mail: 457383152@qq.com”)<br>        call append(line(“.”)+5, “# Created Time: “.strftime(“%c”))<br>        call append(line(“.”)+6, “#########################################################################”)<br>        call append(line(“.”)+7, “”)</p>
-<pre><code><span class="keyword">else</span> 
-    <span class="built_in">call</span> <span class="built_in">setline</span>(<span class="number">1</span>, <span class="string">"/*************************************************************************"</span>) 
-    <span class="built_in">call</span> <span class="built_in">append</span>(<span class="built_in">line</span>(<span class="string">"."</span>), <span class="string">"    &gt; File Name: "</span>.<span class="built_in">expand</span>(<span class="string">"%"</span>)) 
-    <span class="built_in">call</span> <span class="built_in">append</span>(<span class="built_in">line</span>(<span class="string">"."</span>)+<span class="number">1</span>, <span class="string">"  &gt; Author: will"</span>) 
-    <span class="built_in">call</span> <span class="built_in">append</span>(<span class="built_in">line</span>(<span class="string">"."</span>)+<span class="number">2</span>, <span class="string">"  &gt; Mail: 457383152@qq.com "</span>) 
-    <span class="built_in">call</span> <span class="built_in">append</span>(<span class="built_in">line</span>(<span class="string">"."</span>)+<span class="number">3</span>, <span class="string">"  &gt; Created Time: "</span>.<span class="built_in">strftime</span>(<span class="string">"%c"</span>)) 
-    <span class="built_in">call</span> <span class="built_in">append</span>(<span class="built_in">line</span>(<span class="string">"."</span>)+<span class="number">4</span>, <span class="string">" ************************************************************************/"</span>) 
-    <span class="built_in">call</span> <span class="built_in">append</span>(<span class="built_in">line</span>(<span class="string">"."</span>)+<span class="number">5</span>, <span class="string">""</span>)
-<span class="keyword">endif</span>
-<span class="keyword">if</span> &amp;<span class="keyword">filetype</span> == <span class="string">'cpp'</span>
-    <span class="built_in">call</span> <span class="built_in">append</span>(<span class="built_in">line</span>(<span class="string">"."</span>)+<span class="number">6</span>, <span class="string">"#include&lt;iostream&gt;"</span>)
-    <span class="built_in">call</span> <span class="built_in">append</span>(<span class="built_in">line</span>(<span class="string">"."</span>)+<span class="number">7</span>, <span class="string">"using namespace std;"</span>)
-    <span class="built_in">call</span> <span class="built_in">append</span>(<span class="built_in">line</span>(<span class="string">"."</span>)+<span class="number">8</span>, <span class="string">""</span>)                                                                                                                                                                         
-<span class="keyword">endif</span>
-<span class="keyword">if</span> &amp;<span class="keyword">filetype</span> == <span class="string">'c'</span>
-    <span class="built_in">call</span> <span class="built_in">append</span>(<span class="built_in">line</span>(<span class="string">"."</span>)+<span class="number">6</span>, <span class="string">"#include&lt;stdio.h&gt;"</span>)
-    <span class="built_in">call</span> <span class="built_in">append</span>(<span class="built_in">line</span>(<span class="string">"."</span>)+<span class="number">7</span>, <span class="string">""</span>)
-<span class="keyword">endif</span>
-<span class="keyword">if</span> &amp;<span class="keyword">filetype</span> == <span class="string">'python'</span>
-    <span class="built_in">call</span> <span class="built_in">append</span>(<span class="built_in">line</span>(<span class="string">"."</span>)+<span class="number">8</span>, <span class="string">"import sys"</span>)
-    <span class="built_in">call</span> <span class="built_in">append</span>(<span class="built_in">line</span>(<span class="string">"."</span>)+<span class="number">9</span>, <span class="string">"import os"</span>)
-<span class="keyword">endif</span>
-<span class="string">"   if &amp;filetype == 'java'
-</span><span class="string">"       call append(line("</span>.<span class="string">")+6,"</span>public class <span class="string">".expand("</span>%<span class="string">"))
-</span><span class="string">"       call append(line("</span>.<span class="string">")+7,"</span><span class="string">")
-</span><span class="string">"   endif
-</span><span class="string">"新建文件后，自动定位到文件末尾
-</span><span class="keyword">autocmd</span> BufNewFile * <span class="keyword">normal</span> G
-</code></pre><p>endfunc<br>“”””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””<br>“键盘命令<br>“”””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””</p>
-<p>nmap <leader>w :w!<cr><br>nmap <leader>f :find<cr></cr></leader></cr></leader></p>
-<p>“ 映射全选+复制 ctrl+a<br>map <c-a> ggVGY<br>map! <c-a> <esc>ggVGY<br>map <f12> gg=G<br>“ 选中状态下 Ctrl+c 复制<br>vmap <c-c> “+y<br>“去空行<br>nnoremap <f2> :g/^\s*$/d<cr><br>“比较文件<br>nnoremap <c-f2> :vert diffsplit<br>“新建标签<br>map <m-f2> :tabnew<cr><br>“列出当前目录文件<br>map <f3> :tabnew .<cr><br>“打开树状文件目录<br>map <c-f3> \be<br>“C，C++ 按F5编译运行<br>map <f5> :call CompileRunGcc()<cr><br>func! CompileRunGcc()<br>    exec “w”<br>    if &amp;filetype == ‘c’<br>        exec “!g++ % -o %&lt;”<br>        exec “! ./%&lt;”<br>    elseif &amp;filetype == ‘cpp’<br>        exec “!g++ % -o %&lt;”<br>        exec “! ./%&lt;”<br>    elseif &amp;filetype == ‘java’<br>        exec “!javac %”<br>        exec “!java %&lt;”<br>    elseif &amp;filetype == ‘sh’<br>        :!./%<br>    elseif &amp;filetype == ‘py’<br>        exec “!python %”<br>        exec “!python %&lt;”<br>    endif<br>endfunc<br>“C,C++的调试<br>map <f8> :call Rungdb()<cr><br>func! Rungdb()<br>    exec “w”<br>    exec “!g++ % -g -o %&lt;”<br>    exec “!gdb ./%&lt;”<br>endfunc</cr></f8></cr></f5></c-f3></cr></f3></cr></m-f2></c-f2></cr></f2></c-c></f12></esc></c-a></c-a></p>
-<p>“”””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””<br>“”实用设置<br>“””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””<br>“ 设置当文件被改动时自动载入<br>set autoread<br>“ quickfix模式<br>autocmd FileType c,cpp map <buffer> <leader><space> :w<cr>:make<cr><br>“代码补全<br>set completeopt=preview,menu<br>“允许插件<br>filetype plugin on<br>“共享剪贴板<br>set clipboard+=unnamed<br>“从不备份<br>“”set nobackup<br>“make 运行<br>:set makeprg=g++\ -Wall\ \ %<br>“自动保存<br>set autowrite<br>set ruler                   “ 打开状态栏标尺<br>set cursorline              “ 突出显示当前行<br>set magic                   “ 设置魔术<br>set guioptions-=T           “ 隐藏工具栏<br>set guioptions-=m           “ 隐藏菜单栏<br>“set statusline=\ %&lt;%F[%1<em>%M%</em>%n%R%H]%=\ %y\ %0(%{&amp;fileformat}\ %{&amp;encoding}\ %c:%l/%L%)\<br>“ 设置在状态行显示的信息<br>set foldcolumn=0<br>set foldmethod=indent<br>set foldlevel=3<br>“set foldenable              “ 开始折叠<br>“ 不要使用vi的键盘模式，而是vim自己的<br>set nocompatible<br>“ 语法高亮<br>set syntax=on<br>“ 去掉输入错误的提示声音<br>set noeb<br>“ 在处理未保存或只读文件的时候，弹出确认<br>set confirm<br>“ 自动缩进<br>set autoindent<br>set cindent<br>“ Tab键的宽度<br>set tabstop=4<br>“ 统一缩进为4<br>set softtabstop=4<br>set shiftwidth=4<br>“ 用空格代替制表符<br>set expandtab<br>“ 在行和段开始处使用制表符<br>set smarttab<br>“ 显示行号<br>set number<br>“ 历史记录数<br>set history=1000<br>“禁止生成临时文件<br>“set nobackup<br>“set noswapfile<br>“搜索忽略大小写<br>set ignorecase<br>“搜索逐字符高亮<br>set hlsearch<br>set incsearch<br>“行内替换<br>set gdefault<br>“编码设置<br>set enc=utf-8<br>set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936<br>“语言设置<br>set langmenu=zh<em>CN.UTF-8<br>set helplang=cn<br>“ 我的状态行显示的内容（包括文件类型和解码）<br>“set statusline=%F%m%r%h%w\ [FORMAT=%{&amp;ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\”%d/%m/%y\ -\ %H:%M\”)}<br>“set statusline=[%F]%y%r%m%*%=[Line:%l/%L,Column:%c][%p%%]<br>“ 总是显示状态行<br>set laststatus=2<br>“ 命令行（在状态行下）的高度，默认为1，这里是2<br>set cmdheight=2<br>“ 侦测文件类型<br>filetype on<br>“ 载入文件类型插件<br>filetype plugin on<br>“ 为特定文件类型载入相关缩进文件<br>filetype indent on<br>“ 保存全局变量<br>set viminfo+=!<br>“ 带有如下符号的单词不要被换行分割<br>set iskeyword+=</em>,$,@,%,#,-<br>“ 字符间插入的像素行数目<br>set linespace=0<br>“ 增强模式中的命令行自动完成操作<br>set wildmenu<br>“ 使回格键（backspace）正常处理indent, eol, start等<br>set backspace=2<br>“ 允许backspace和光标键跨越行边界<br>set whichwrap+=&lt;,&gt;,h,l<br>“ 可以在buffer的任何地方使用鼠标（类似office中在工作区双击鼠标定位）<br>“set mouse=a<br>“set selection=exclusive<br>“set selectmode=mouse,key<br>“ 通过使用: commands命令，告诉我们文件的哪一行被改变过<br>set report=0<br>“ 在被分割的窗口间显示空白，便于阅读<br>set fillchars=vert:\ ,stl:\ ,stlnc:\<br>“ 高亮显示匹配的括号<br>set showmatch<br>“ 匹配括号高亮的时间（单位是十分之一秒）<br>set matchtime=1<br>“ 光标移动到buffer的顶部和底部时保持3行距离<br>set scrolloff=3<br>“ 为C程序提供自动缩进<br>set smartindent<br>“ 高亮显示普通txt文件（需要txt.vim脚本）<br>au BufRead,BufNewFile *  setfiletype txt<br>“自动补全<br>“‘:inoremap ( ()<esc>i<br>“:inoremap ) <c-r>=ClosePair(‘)’)<cr><br>“:inoremap { {<cr>}<esc>O<br>“:inoremap } <c-r>=ClosePair(‘}’)<cr><br>“:inoremap [ []<esc>i<br>“:inoremap ] <c-r>=ClosePair(‘]’)<cr><br>“:inoremap “ “”<esc>i<br>“:inoremap ‘ ‘’<esc>i<br>“function! ClosePair(char)<br>“   if getline(‘.’)[col(‘.’) - 1] == a:char<br>“       return “\<right>“<br>“   else<br>“       return a:char<br>“   endif<br>“”endfunction<br>filetype plugin indent on<br>“打开文件类型检测, 加了这句才可以用智能补全<br>set completeopt=longest,menu<br>“””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””</right></esc></esc></cr></c-r></esc></cr></c-r></esc></cr></cr></c-r></esc></cr></cr></space></leader></buffer></p>
-<p>“NERDtee设定<br>let NERDChristmasTree=1<br>let NERDTreeAutoCenter=1<br>let NERDTreeBookmarksFile=$VIM.’\Data\NerdBookmarks.txt’<br>let NERDTreeMouseMode=2<br>let NERDTreeShowBookmarks=1<br>let NERDTreeShowFiles=1<br>let NERDTreeShowHidden=1<br>let NERDTreeShowLineNumbers=1<br>let NERDTreeWinPos=’left’<br>let NERDTreeWinSize=31<br>nnoremap f :NERDTreeToggle<br>map <f7> :NERDTree<cr> </cr></f7></p>
+        <pre><code>
+
+map <f9> :call SaveInputData()<cr>                                                                                                                                                                           
+func! SaveInputData()
+    exec "tabnew"
+    exec 'normal "+gP'
+    exec "w! /tmp/input_data"
+endfunc
+
+
+
+
+"colorscheme torte
+"colorscheme murphy
+"colorscheme desert 
+"colorscheme desert 
+"colorscheme elflord
+colorscheme ron 
+
+
+
+
+"set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
+"set termencoding=utf-8
+"set encoding=utf-8
+"set fileencodings=ucs-bom,utf-8,cp936
+"set fileencoding=utf-8
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 显示相关  
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"set shortmess=atI   " 启动的时候不显示那个援助乌干达儿童的提示  
+"winpos 5 5          " 设定窗口位置  
+"set lines=40 columns=155    " 设定窗口大小  
+set go=             " 不要图形按钮  
+"color asmanian2     " 设置背景主题  
+"set guifont=Courier_New:h10:cANSI   " 设置字体  
+"syntax on           " 语法高亮  
+autocmd InsertLeave * se nocul  " 用浅色高亮当前行  
+autocmd InsertEnter * se cul    " 用浅色高亮当前行  
+"set ruler           " 显示标尺  
+set showcmd         " 输入的命令显示出来，看的清楚些  
+"set cmdheight=1     " 命令行（在状态行下）的高度，设置为1  
+"set whichwrap+=<,>,h,l   " 允许backspace和光标键跨越行边界(不建议)  
+"set scrolloff=3     " 光标移动到buffer的顶部和底部时保持3行距离  
+set novisualbell    " 不要闪烁(不明白)  
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}   "状态行显示的内容  
+set laststatus=1    " 启动显示状态行(1),总是显示状态行(2)  
+"set foldenable      " 允许折叠  
+set foldmethod=manual   " 手动折叠  
+"set background=dark "背景使用黑色 
+set nocompatible  "去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限  
+" 显示中文帮助
+if version >= 603 
+    set helplang=cn
+    set encoding=utf-8
+endif
+" 设置配色方案
+"colorscheme murphy
+"字体 
+"if (has("gui_running")) 
+"   set guifont=Bitstream\ Vera\ Sans\ Mono\ 10 
+"endif 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""新文件标题
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"新建.c,.h,.sh,.java文件，自动插入文件头 
+""filetype on
+autocmd BufNewFile *.py,*.cpp,*.[ch],*.sh,*.java exec ":call SetTitle()" 
+""定义函数SetTitle，自动插入文件头 
+func SetTitle() 
+    "如果文件类型为.sh文件 
+    if &filetype == 'sh'
+        call setline(1,"\#########################################################################") 
+        call append(line("."), "\# File Name: ".expand("%")) 
+        call append(line(".")+1, "\# Author: will") 
+        call append(line(".")+2, "\# mail: 457383152@qq.com") 
+        call append(line(".")+3, "\# Created Time: ".strftime("%c")) 
+        call append(line(".")+4, "\#########################################################################") 
+        call append(line(".")+5, "\#!/bin/bash") 
+        call append(line(".")+6, "")
+    elseif &filetype == 'python'
+        call setline(1,"\#!/usr/bin/env python")
+        call append(line("."),"\#encoding:utf-8")
+        call append(line(".")+1,"\#########################################################################")
+        call append(line(".")+2, "\# File Name: ".expand("%"))
+        call append(line(".")+3, "\# Author: will")
+        call append(line(".")+4, "\# mail: 457383152@qq.com")
+        call append(line(".")+5, "\# Created Time: ".strftime("%c"))
+        call append(line(".")+6, "\#########################################################################")
+        call append(line(".")+7, "")
+
+    else 
+        call setline(1, "/*************************************************************************") 
+        call append(line("."), "    > File Name: ".expand("%")) 
+        call append(line(".")+1, "  > Author: will") 
+        call append(line(".")+2, "  > Mail: 457383152@qq.com ") 
+        call append(line(".")+3, "  > Created Time: ".strftime("%c")) 
+        call append(line(".")+4, " ************************************************************************/") 
+        call append(line(".")+5, "")
+    endif
+    if &filetype == 'cpp'
+        call append(line(".")+6, "#include<iostream>")
+        call append(line(".")+7, "using namespace std;")
+        call append(line(".")+8, "")                                                                                                                                                                         
+    endif
+    if &filetype == 'c'
+        call append(line(".")+6, "#include<stdio.h>")
+        call append(line(".")+7, "")
+    endif
+    if &filetype == 'python'
+        call append(line(".")+8, "import sys")
+        call append(line(".")+9, "import os")
+    endif
+    "   if &filetype == 'java'
+    "       call append(line(".")+6,"public class ".expand("%"))
+    "       call append(line(".")+7,"")
+    "   endif
+    "新建文件后，自动定位到文件末尾
+    autocmd BufNewFile * normal G
+endfunc 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"键盘命令
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+nmap <leader>w :w!<cr>
+nmap <leader>f :find<cr>
+
+" 映射全选+复制 ctrl+a
+map <c-a> ggVGY
+map! <c-a> <esc>ggVGY
+map <f12> gg=G
+" 选中状态下 Ctrl+c 复制
+vmap <c-c> "+y
+"去空行  
+nnoremap <f2> :g/^\s*$/d<cr> 
+"比较文件  
+nnoremap <c-f2> :vert diffsplit 
+"新建标签  
+map <m-f2> :tabnew<cr>  
+"列出当前目录文件  
+map <f3> :tabnew .<cr>  
+"打开树状文件目录  
+map <c-f3> \be  
+"C，C++ 按F5编译运行
+map <f5> :call CompileRunGcc()<cr>
+func! CompileRunGcc()
+    exec "w"
+    if &filetype == 'c'
+        exec "!g++ % -o %<" exec="" "!="" .="" %<"="" elseif="" &filetype="=" 'cpp'="" "!g++="" %="" -o="" 'java'="" "!javac="" %"="" "!java="" 'sh'="" :!.="" 'py'="" "!python="" endif="" endfunc="" "c,c++的调试="" map="" <f8=""> :call Rungdb()<cr>
+func! Rungdb()
+    exec "w"
+    exec "!g++ % -g -o %<" exec="" "!gdb="" .="" %<"="" endfunc="" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""="" ""实用设置="" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""="" "="" 设置当文件被改动时自动载入="" set="" autoread="" quickfix模式="" autocmd="" filetype="" c,cpp="" map="" <buffer=""> <leader><space> :w<cr>:make<cr>
+"代码补全 
+set completeopt=preview,menu 
+"允许插件  
+filetype plugin on
+"共享剪贴板  
+set clipboard+=unnamed 
+"从不备份  
+""set nobackup
+"make 运行
+:set makeprg=g++\ -Wall\ \ %
+"自动保存
+set autowrite
+set ruler                   " 打开状态栏标尺
+set cursorline              " 突出显示当前行
+set magic                   " 设置魔术
+set guioptions-=T           " 隐藏工具栏
+set guioptions-=m           " 隐藏菜单栏
+"set statusline=\ %<%f[%1*%m%*%n%r%h]%=\ %y\="" %0(%{&fileformat}\="" %{&encoding}\="" %c:%l="" %l%)\="" "="" 设置在状态行显示的信息="" set="" foldcolumn="0" foldmethod="indent" foldlevel="3" "set="" foldenable="" 开始折叠="" 不要使用vi的键盘模式，而是vim自己的="" nocompatible="" 语法高亮="" syntax="on" 去掉输入错误的提示声音="" noeb="" 在处理未保存或只读文件的时候，弹出确认="" confirm="" 自动缩进="" autoindent="" cindent="" tab键的宽度="" tabstop="4" 统一缩进为4="" softtabstop="4" shiftwidth="4" 用空格代替制表符="" expandtab="" 在行和段开始处使用制表符="" smarttab="" 显示行号="" number="" 历史记录数="" history="1000" "禁止生成临时文件="" nobackup="" noswapfile="" "搜索忽略大小写="" ignorecase="" "搜索逐字符高亮="" hlsearch="" incsearch="" "行内替换="" gdefault="" "编码设置="" enc="utf-8" fencs="utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936" "语言设置="" langmenu="zh_CN.UTF-8" helplang="cn" 我的状态行显示的内容（包括文件类型和解码）="" statusline="%F%m%r%h%w\" [format="%{&ff}]\" [type="%Y]\" [pos="%l,%v][%p%%]\" %{strftime(\"%d="" %m="" -\="" %h:%m\")}="" 总是显示状态行="" laststatus="2" 命令行（在状态行下）的高度，默认为1，这里是2="" cmdheight="2" 侦测文件类型="" filetype="" on="" 载入文件类型插件="" plugin="" 为特定文件类型载入相关缩进文件="" indent="" 保存全局变量="" viminfo+="!" 带有如下符号的单词不要被换行分割="" iskeyword+="_,$,@,%,#,-" 字符间插入的像素行数目="" linespace="0" 增强模式中的命令行自动完成操作="" wildmenu="" 使回格键（backspace）正常处理indent,="" eol,="" start等="" backspace="2" 允许backspace和光标键跨越行边界="" whichwrap+="<,">,h,l
+" 可以在buffer的任何地方使用鼠标（类似office中在工作区双击鼠标定位）
+"set mouse=a
+"set selection=exclusive
+"set selectmode=mouse,key
+" 通过使用: commands命令，告诉我们文件的哪一行被改变过
+set report=0
+" 在被分割的窗口间显示空白，便于阅读
+set fillchars=vert:\ ,stl:\ ,stlnc:\
+" 高亮显示匹配的括号
+set showmatch
+" 匹配括号高亮的时间（单位是十分之一秒）
+set matchtime=1
+" 光标移动到buffer的顶部和底部时保持3行距离
+set scrolloff=3
+" 为C程序提供自动缩进
+set smartindent
+" 高亮显示普通txt文件（需要txt.vim脚本）
+au BufRead,BufNewFile *  setfiletype txt
+"自动补全
+"':inoremap ( ()<esc>i
+":inoremap ) <c-r>=ClosePair(')')<cr>
+":inoremap { {<cr>}<esc>O
+":inoremap } <c-r>=ClosePair('}')<cr>
+":inoremap [ []<esc>i
+":inoremap ] <c-r>=ClosePair(']')<cr>
+":inoremap " ""<esc>i
+":inoremap ' ''<esc>i
+"function! ClosePair(char)
+"   if getline('.')[col('.') - 1] == a:char
+"       return "\<right>"
+"   else
+"       return a:char
+"   endif
+""endfunction
+filetype plugin indent on 
+"打开文件类型检测, 加了这句才可以用智能补全
+set completeopt=longest,menu
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
+
+
+
+"NERDtee设定
+let NERDChristmasTree=1
+let NERDTreeAutoCenter=1
+let NERDTreeBookmarksFile=$VIM.'\Data\NerdBookmarks.txt'                                                                                                                                                     
+let NERDTreeMouseMode=2
+let NERDTreeShowBookmarks=1
+let NERDTreeShowFiles=1
+let NERDTreeShowHidden=1                                                                                                                                                                                     
+let NERDTreeShowLineNumbers=1
+let NERDTreeWinPos='left'
+let NERDTreeWinSize=31
+nnoremap f :NERDTreeToggle
+map <f7> :NERDTree<cr>
+
+</cr></f7></right></esc></esc></cr></c-r></esc></cr></c-r></esc></cr></cr></c-r></esc></%f[%1*%m%*%n%r%h]%=\></cr></cr></space></leader></"></cr></"></cr></f5></c-f3></cr></f3></cr></m-f2></c-f2></cr></f2></c-c></f12></esc></c-a></c-a></cr></leader></cr></leader></stdio.h></iostream></,></cr></f9></code></pre> 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.codtage.com/2015/01/03/vim-config/" data-id="ci9dl8pax0000ncd2cyltuosc" class="article-share-link">Share</a>
+      <a data-url="http://www.codtage.com/2015/01/03/vim-config/" data-id="ci9dlaxci0000nsd2o0822x6t" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
